@@ -3,19 +3,24 @@
             // Language: C++
             // Link: https://leetcode.com/problems/binary-tree-inorder-traversal/
 
+            else{
+                TreeNode* prev=root->left;
 
-        ans.push_back(root->val);
+                while(prev->right && prev->right!=root){
+                    prev=prev->right;
+                }
 
-        inorder(root->right, ans);
-    }
+                if(prev->right==NULL){
+                    prev->right=root;
+                    root=root->left;
+                }
+                else{
+                    prev->right=NULL;
+                    ans.push_back(root->val);
+                }
+            }
+        }
 
-public:
-    vector<int> inorderTraversal(TreeNode* root) {
-        inorder(root, ans);
 
-        vector<int> ans;
-
-
+                    root=root->right;
         return ans;
-    }
-};
