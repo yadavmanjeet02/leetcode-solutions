@@ -1,0 +1,10 @@
+// Title: Replace Employee ID With The Unique Identifier
+            // Difficulty: Easy
+            // Language: MySQL
+            // Link: https://leetcode.com/problems/replace-employee-id-with-the-unique-identifier/
+
+SELECT a.name, b.unique_id
+FROM Employees as a
+LEFT JOIN EmployeeUNI as b
+ON a.id=b.id OR NULL;
+
