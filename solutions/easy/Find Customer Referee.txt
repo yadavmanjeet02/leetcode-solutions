@@ -3,7 +3,6 @@
             // Language: MySQL
             // Link: https://leetcode.com/problems/find-customer-referee/
 
-# Write your MySQL query statement be
-SELECT name 
-FROM Customer
-where COALESCE(referee_id,0)!=2
+SELECT name
+FROM Customer 
+WHERE referee_id!=2 OR referee_id IS NULL;
