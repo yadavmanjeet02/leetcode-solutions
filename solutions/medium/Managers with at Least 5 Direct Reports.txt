@@ -1,0 +1,13 @@
+// Title: Managers with at Least 5 Direct Reports
+            // Difficulty: Medium
+            // Language: MySQL
+            // Link: https://leetcode.com/problems/managers-with-at-least-5-direct-reports/
+
+# Write your MySQL query statement below
+select a.name
+from employee as a
+inner join employee as b
+on a.id=b.managerid
+group by b.managerid
+having count(b.managerid)>=5
+ 
