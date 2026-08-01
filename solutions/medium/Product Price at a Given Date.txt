@@ -1,0 +1,22 @@
+// Title: Product Price at a Given Date
+            // Difficulty: Medium
+            // Language: MySQL
+            // Link: https://leetcode.com/problems/product-price-at-a-given-date/
+
+SELECT a.product_id, a.new_price AS price
+FROM Products AS a
+JOIN (
+    SELECT product_id, MAX(change_date) AS change_date
+ON a.product_id = b.product_id
+    FROM Products
+    WHERE change_date <= '2019-08-16'
+    GROUP BY product_id
+) AS b
+
+SELECT product_id, 10 AS price
+AND a.change_date = b.change_date
+
+UNION
+FROM Products
+GROUP BY product_id
+HAVING MIN(change_date) > '2019-08-16';
