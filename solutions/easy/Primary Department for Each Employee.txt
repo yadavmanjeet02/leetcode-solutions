@@ -1,0 +1,16 @@
+// Title: Primary Department for Each Employee
+            // Difficulty: Easy
+            // Language: MySQL
+            // Link: https://leetcode.com/problems/primary-department-for-each-employee/
+
+# Write your MySQL query statement below
+select a.employee_id, if(b.department_id, b.department_id, a.department_id) as department_id
+from employee as a 
+left join (
+    select employee_id,department_id
+    from employee
+) as b
+on a.employee_id=b.employee_id
+
+    where primary_flag='Y'
+group by employee_id
