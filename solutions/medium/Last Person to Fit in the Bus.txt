@@ -1,0 +1,15 @@
+// Title: Last Person to Fit in the Bus
+            // Difficulty: Medium
+            // Language: MySQL
+            // Link: https://leetcode.com/problems/last-person-to-fit-in-the-bus/
+
+# Write your MySQL query statement below
+select person_name
+from (
+    select person_name, sum(weight) over (order by turn) as total_weights
+    from queue
+) t
+where total_weights<=1000
+order by total_weights desc
+limit 1 
+
