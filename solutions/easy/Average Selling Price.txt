@@ -1,0 +1,13 @@
+// Title: Average Selling Price
+            // Difficulty: Easy
+            // Language: MySQL
+            // Link: https://leetcode.com/problems/average-selling-price/
+
+# Write your MySQL query statement below
+select a.product_id,IFNULL(ROUND(SUM(a.price * b.units) / SUM(b.units), 2),0) as  average_price
+from prices as a
+LEFT join unitssold as b
+on a.product_id = b.product_id and b.purchase_date between a.start_date and a.end_date
+group by a. product_id
+
+
