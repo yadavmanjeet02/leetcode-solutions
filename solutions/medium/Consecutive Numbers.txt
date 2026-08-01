@@ -1,0 +1,17 @@
+// Title: Consecutive Numbers
+            // Difficulty: Medium
+            // Language: MySQL
+            // Link: https://leetcode.com/problems/consecutive-numbers/
+
+# Write your MySQL query statement below
+select distinct a.num as consecutivenums
+from logs as a
+join logs as b
+join logs as c
+where a.id+1=b.id
+and b.id+1=c.id
+
+
+and a.num=b.num
+and b.num=c.num
+
