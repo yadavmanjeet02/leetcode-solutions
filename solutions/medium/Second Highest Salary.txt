@@ -1,0 +1,15 @@
+// Title: Second Highest Salary
+            // Difficulty: Medium
+            // Language: MySQL
+            // Link: https://leetcode.com/problems/second-highest-salary/
+
+SELECT (
+    SELECT DISTINCT salary
+    FROM Employee
+    WHERE salary < (
+        SELECT MAX(salary)
+        FROM Employee
+    ORDER BY salary DESC
+    LIMIT 1
+) AS SecondHighestSalary;
+    )
