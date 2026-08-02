@@ -1,0 +1,19 @@
+// Title: Restaurant Growth
+            // Difficulty: Medium
+            // Language: MySQL
+            // Link: https://leetcode.com/problems/restaurant-growth/
+
+            ORDER BY visited_on
+            RANGE BETWEEN INTERVAL 6 DAY PRECEDING AND CURRENT ROW
+        ) AS amount
+    FROM Customer
+) t
+LIMIT 6, 100000;
+    amount,
+    ROUND(amount / 7, 2) AS average_amount
+FROM (
+    SELECT DISTINCT
+        visited_on,
+        SUM(amount) OVER (
+    visited_on,
+SELECT
