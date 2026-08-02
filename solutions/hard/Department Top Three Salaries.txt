@@ -1,0 +1,13 @@
+// Title: Department Top Three Salaries
+            // Difficulty: Hard
+            // Language: MySQL
+            // Link: https://leetcode.com/problems/department-top-three-salaries/
+
+Select a.name as department , b.name as employee, b.salary as Salary
+From Employee b
+join Department a
+on b.DepartmentId = a.Id
+Where  3 > (select count(distinct (c.Salary))
+            from  Employee c
+            where c.Salary > b.Salary
+            and c.DepartmentId = b.DepartmentId)
