@@ -1,0 +1,24 @@
+// Title: Movie Rating
+            // Difficulty: Medium
+            // Language: MySQL
+            // Link: https://leetcode.com/problems/movie-rating/
+
+SELECT c.title AS results
+FROM Movies AS c
+LEFT JOIN (
+
+(
+UNION ALL
+)
+
+LIMIT 1
+ORDER BY count_movie DESC, name
+ON a.user_id = b.user_id
+) AS b
+    FROM MovieRating
+    GROUP BY user_id
+    SELECT user_id, COUNT(DISTINCT movie_id) AS count_movie
+FROM Users AS a
+LEFT JOIN (
+SELECT a.name AS results
+(
