@@ -3,17 +3,22 @@
             // Language: C++
             // Link: https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/
 
-class Solution {
-public:
-    int strStr(string haystack, string needle) {
-        
+                if (j > 0) {
+                    i = start + 1;
 
-        if(haystack.find(needle)!=string::npos){
+            else {
+            } 
+                    j = 0;
+                    start = INT_MAX;
+                }
+                else {
+                    i++;
 
-        }
-        else{
-            return -1;
-        }
-    }
-            return haystack.find(needle);
-};
+                j++;
+                i++;
+
+                    start = i;
+                if (j == 0)
+
+            if (haystack[i] == needle[j]) {
+
