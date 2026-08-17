@@ -3,10 +3,11 @@
             // Language: C++
             // Link: https://leetcode.com/problems/minimum-size-subarray-sum/
 
-
-            sum += nums[i];
+        int mini = INT_MAX;
 
         for (int i = 0; i < n; i++) {
+
+            sum += nums[i];
 
             while (sum >= target) {
 
